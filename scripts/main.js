@@ -5,5 +5,9 @@ window.onload = () => {
     let modalButton = document.getElementById(`modal`);
     let modalContent = document.querySelector(`div`);
 
+    menuButton.addEventListener(`click`, toggleMenu);
+    modalButton.addEventListener(`click`, showModal);
+    modalContent.addEventListener(`click`, hideModal);
+    document.addEventListener(`keydown`, closeModal);
 
 };
