@@ -1,9 +1,10 @@
 window.onload = () => {
     let pageBody = document.querySelector(`body`);
-    let menuButton = document.getElementById(`menu`);
     let navigationMenu = document.querySelector(`nav`);
-    let modalButton = document.getElementById(`modal`);
     let modalContent = document.querySelector(`div`);
+    let menuButton = document.getElementById(`menu`);
+    let modalButton = document.getElementById(`modal`);
+
 
     menuButton.addEventListener(`click`, toggleMenu);
     modalButton.addEventListener(`click`, showModal);
@@ -11,3 +12,8 @@ window.onload = () => {
     document.addEventListener(`keydown`, closeModal);
 
 };
+
+function toggleMenu() {
+    navigationMenu.classList.toggle(`menu-hidden`);
+}
+
