@@ -16,4 +16,12 @@ window.onload = () => {
 function toggleMenu() {
     navigationMenu.classList.toggle(`menu-hidden`);
 }
+function showModal() {
+    modalContent.classList.remove(`modal-hidden`);
+    pageBody.classList.add(`no-scroll`);
+}
 
+function hideModal() {
+    modalContent.classList.add(`modal-hidden`);
+    pageBody.classList.remove(`no-scroll`);
+}
