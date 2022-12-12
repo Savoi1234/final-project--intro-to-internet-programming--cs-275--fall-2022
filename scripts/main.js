@@ -1,33 +1,39 @@
 window.onload = () => {
+    // Select the modal button and the modal element
+    let modalButn = document.getElementById(`mod-elem`);
+    let modalElem = document.querySelectorAll(`div`)[0];
 
-    let navigationMenu = document.querySelector(`nav`);
-    let modalContent = document.querySelector(`div`);
-    let menuButton = document.getElementById(`menu`);
-    let modalButton = document.getElementById(`modal`);
+    // Select the men button and the menu element
+    let menButn = document.getElementById(`men-elem`);
+    let menuElem = document.querySelector(`nav`);
 
+    // Add an event listener to activate the modal when the button is clicked
+    modalButn.addEventListener(`click`, () => {
+        if (modalElem.classList.contains(`none`)) {
+            modalElem.classList.remove(`none`);
+        }
+    });
 
-    menuButton.addEventListener(`click`, toggleMenu);
-    modalButton.addEventListener(`click`, showModal);
-    modalContent.addEventListener(`click`, hideModal);
-    document.addEventListener(`keydown`, closeModal);
+    // Add an event listener to deactivate the modal when the user clicks outside the content panel
+    modalElem.addEventListener(`click`, () => {
+        if (!modalElem.classList.contains(`none`)) {
+            modalElem.classList.add(`none`);
+        }
+    });
 
+    // Add an event listener to activate the menu when the button is clicked
+    menButn.addEventListener(`click`, () => {
+        if (!menuElem.classList.contains(`none`)) {
+            menuElem.classList.add(`none`);
+        }else{
+            menuElem.classList.remove(`none`);
+        }
+    });
+
+    // Add an event listener to deactivate the modal when the user presses the Escape key
+    document.addEventListener(`keydown`, (e) => {
+        if (e.key === `Escape` && !modalElem.classList.contains(`none`)) {
+            modalElem.click();
+        }
+    });
 };
-
-function toggleMenu() {
-    navigationMenu.classList.toggle(`menu-hidden`);
-}
-function showModal() {
-    modalContent.classList.remove(`modal-hidden`);
-    pageBody.classList.add(`no-scroll`);
-}
-
-function hideModal() {
-    modalContent.classList.add(`modal-hidden`);
-    pageBody.classList.remove(`no-scroll`);
-}
-
-function closeModal(e) {
-    if (e.key === `Escape` && !modalContent.classList.contains(`modal-hidden`)) {
-        modalContent.click();
-    }
-}
