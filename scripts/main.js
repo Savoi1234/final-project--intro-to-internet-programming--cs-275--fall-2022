@@ -1,5 +1,5 @@
 window.onload = () => {
-    let pageBody = document.querySelector(`body`);
+
     let navigationMenu = document.querySelector(`nav`);
     let modalContent = document.querySelector(`div`);
     let menuButton = document.getElementById(`menu`);
