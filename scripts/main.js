@@ -25,3 +25,9 @@ function hideModal() {
     modalContent.classList.add(`modal-hidden`);
     pageBody.classList.remove(`no-scroll`);
 }
+
+function closeModal(e) {
+    if (e.key === `Escape` && !modalContent.classList.contains(`modal-hidden`)) {
+        modalContent.click();
+    }
+}
