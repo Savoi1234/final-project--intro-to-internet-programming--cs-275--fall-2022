@@ -1,40 +1,134 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background-color: blanchedalmond;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 40px 25px 3px;
+  background-color: brown;
+  text-align: right;
+  border-radius: 50px;
+}
+
+main {
+  margin: 100px 20px;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+ul li {
+  margin-left: -40px;
+}
+
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
+  position: relative;
+  display: flex;
+  top: 80px;
+  width: 300px;
+  height: 48px;
+  left: 625px;
 }
 
-
-.menu-hidden {
-    display: none;
+a {
+  color: white;
+  text-decoration: none;
 }
 
-.modal-hidden {
-    display: none;
+nav a {
+  display: block;
+  width: 150px;
+  line-height: 48px;
+  background-color: rgb(78, 98, 84);
+  text-align: center;
+  border-radius: 25px;
 }
 
-.no-scroll {
-    overflow: hidden;
+nav a:hover {
+  background-color: rgb(230, 171, 84);
 }
 
-.modal {
-    position: fixed;
-    top: 0;
+nav > ul {
+  display: flex;
+  margin: 0;
+  padding-left: 40px;
+  list-style-type: none;
+}
+
+nav > ul > li {
+  position: relative;
+  flex-grow: 1;
+  margin: 0;
+  background-color: #fff;
+  width: 150px;
+}
+
+nav > ul > li:hover > ul {
+  visibility: visible;
+}
+
+nav > ul > li > ul a {
+  height: 48px;
+  line-height: 48px;
+  border-radius: 50px;
+  border-color: whites;
+}
+
+nav > ul > li > ul {
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+
+@media (max-width: 736px) {
+
+  nav {
+    flex-direction: column;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
 }
 
-.modal-content {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: center;
+.modal-panel {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.modal-content-panel {
+  position: relative;
+  background: white;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  border-radius: 25px;
+}
+
+p {
+  background-color: white;
+  border-radius: 25px;
+}
+
+h2 {
+  background-color: brown;
+  border-radius: 25px;
 }
